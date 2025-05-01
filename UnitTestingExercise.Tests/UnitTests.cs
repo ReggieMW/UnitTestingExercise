@@ -6,61 +6,62 @@ namespace UnitTestingExercise.Tests
     public class UnitTests
     {
         [Theory]
-        [InlineData(2, 3, 5, 10)] //Add test data <-------
+        [InlineData(2, 3, 5, 10)]
+        [InlineData(10, 7, 11, 28)]
+        [InlineData(10, -7, 15, 18)]
+        [InlineData(0, 3, 5, 8)]
+        
         public void AddTest(int num1, int num2, int num3, int expected)
         {
-            //Start Step 3 here:
-
-            //Arrange
-            // create a Calculator object
+            var calculator = new Calculator();
             
-
-            //Act
-                // call the Add method that is located in the Calculator class
-                // and store its result in a variable named actual
-
-            //Assert
-                //Assert.Equal(expected, actual);
+            var actual = calculator.Add(num1, num2, num3);
+            
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
-        public void SubtractTest(int minuend, int subtrhend, int expected)
+        [InlineData(5, 3, 2)]
+        [InlineData(25, 15, 10)]
+        [InlineData(25, -15, 40)]
+        [InlineData(1, 8, -7)]
+        [InlineData(5, 8, -3)]
+        public void SubtractTest(int minuend, int subtrahend, int expected)
         {
-            //Start Step 5 here:
+           var calculator = new Calculator();
 
-            //Arrange
-
-            //Act
-
-            //Assert
-
+            var actual = calculator.Subtract(minuend, subtrahend);
+            
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(5, 5, 25)]
+        [InlineData(16, 0, 0)]
+        [InlineData(7, -7, -49)]
+        [InlineData(-7, -7, 49)]
+        [InlineData(6, 2, 12)]
         public void MultiplyTest(int num1, int num2, int expected)
         {
-            //Start Step 7 here:
+            var calculator = new Calculator();
 
-            //Arrange
+            var actual = calculator.Multiply(num1, num2);
 
-            //Act
-
-            //Assert
-
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(8, 4, 2)]
+        [InlineData(100, 10, 10)]
+        [InlineData(50, 100, 0.5)]
+        [InlineData(-8, 4, -2)]
         public void DivideTest(int num1, int num2, int expected)
         {
-            //Arrange
+            var calculator = new Calculator();
 
-            //Act
+            var actual = calculator.Divide(num1, num2);
 
-            //Assert
-
+            Assert.Equal(expected, actual);
         }
 
     }
