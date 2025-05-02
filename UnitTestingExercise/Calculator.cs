@@ -7,7 +7,7 @@ namespace UnitTestingExercise
         //For Example:
         public int Add(int num1, int num2, int num3)
         {
-            return num1 + num2 + num3;
+                return num1 + num2 + num3;
         }
 
 
@@ -21,13 +21,7 @@ namespace UnitTestingExercise
         {
             return minuend - subtrahend;
         }
-
-
-        // Step 5: Navigate to the UnitTests.cs file and complete the SubtractTest unit test method
-
-
-        // Step 6: 
-        // Create a Multiply method that passes 2 integers
+        
         public int Multiply(int multiplicand, int multiplicor)
         {
             return multiplicand * multiplicor;
@@ -39,9 +33,12 @@ namespace UnitTestingExercise
 
         // Step 8: 
         // Create a Divide method that passes 2 integers
-        public int Divide(int dividend, int divisor)
+        public string Divide(double dividend, double divisor)
         {
-            return dividend / divisor;
+            if (divisor == 0)
+                return "Error: cannot divide by zero.";
+            
+            return (dividend / divisor).ToString();
         }
 
         // Step 9: Navigate to the UnitTests.cs file and complete the DivideTest unit test method 

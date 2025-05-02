@@ -51,11 +51,13 @@ namespace UnitTestingExercise.Tests
         }
 
         [Theory]
-        [InlineData(8, 4, 2)]
-        [InlineData(100, 10, 10)]
-        [InlineData(50, 100, 0.5)]
-        [InlineData(-8, 4, -2)]
-        public void DivideTest(int num1, int num2, int expected)
+        [InlineData(8, 4, "2")]
+        [InlineData(100, 10, "10")]
+        [InlineData(50, 100, "0.5")]
+        [InlineData(-8, 4, "-2")]
+        [InlineData(5, 0, "Error: cannot divide by zero.")]
+        
+        public void DivideTest(double num1, double num2, string expected)
         {
             var calculator = new Calculator();
 
